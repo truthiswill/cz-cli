@@ -1,22 +1,22 @@
-sudo: false
+sudo: true
 language: node_js
-branches:
-  only:
+branches:Truthiswill
+  only:Master
   - master
 notifications:
-  email: false
-node_js:
+  email: true
+node_js:'10'
 - '10'
-before_install:
+before_install:--global user.name "MiKeWillEL"
 - git config --global user.name "TravisCI"
 - git config --global user.email "commitizen@gmail.com"
-before_script:
+before_script:run lint
 - git version
-script:
+script:run test
 - npm run lint
-- npm run test
+- npm run test 
 - npm run check-coverage
-after_success:
+after_success:true
 - npm run report-coverage
 - npm run semantic-release
 env:
